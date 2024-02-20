@@ -59,7 +59,7 @@ const handleUpdate = async (user: UserPage.UserPageItem) => {
 
 /**
  * @en-US Update node
- * @zh-CN 更新用户信息
+ * @zh-CN 删除用户信息
  *
  * @param fields
  */
