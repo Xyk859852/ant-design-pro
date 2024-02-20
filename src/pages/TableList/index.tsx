@@ -240,15 +240,17 @@ const TableList: React.FC = () => {
       ],
     },
   ];
-
+  /**
+   * ProTable<API.RuleListItem, API.PageParams :列表请求 出参，入参
+   */
   return (
     <PageContainer>
       <ProTable<API.RuleListItem, API.PageParams>
         headerTitle={intl.formatMessage({
           id: 'pages.searchTable.title',
-          defaultMessage: 'Enquiry form',
+          defaultMessage: '测试',
         })}
-        actionRef={actionRef}
+        // actionRef={actionRef}
         rowKey="key"
         search={{
           labelWidth: 120,

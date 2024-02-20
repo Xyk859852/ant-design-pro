@@ -52,6 +52,37 @@ export default [
     component: './TableList',
   },
   {
+    path: '/system',
+    name: '系统应用',
+    icon: 'homeOutlined',
+    routes: [
+      {
+        name: '用户管理',
+        icon: 'UserOutlined',
+        path: '/system/admin-user',
+        component: './System/AdminUser',
+      },
+    ],
+  },
+  {
+    path: '/order',
+    name: '订单管理',
+    icon: 'accountBookOutlined',
+    routes: [],
+  },
+  {
+    path: '/member',
+    name: '会员管理',
+    icon: 'userOutlined',
+    routes: [],
+  },
+  {
+    path: '/shop-info',
+    name: '商户管理',
+    icon: 'transactionOutlined',
+    routes: [],
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },

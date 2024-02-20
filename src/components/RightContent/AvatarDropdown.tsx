@@ -44,6 +44,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
    */
   const loginOut = async () => {
     await outLogin();
+    localStorage.removeItem('token');
     const { search, pathname } = window.location;
     const urlParams = new URL(window.location.href).searchParams;
     /** 此方法会跳转到 redirect 参数所在的位置 */
@@ -67,7 +68,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
       const { key } = event;
       if (key === 'logout') {
         flushSync(() => {
-          setInitialState((s) => ({ ...s, currentUser: undefined }));
+          setInitialState((s) => ({ ...s, currentUser: undefined, token: undefined }));
         });
         loginOut();
         return;
@@ -100,23 +101,21 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
   }
 
   const menuItems = [
-    ...(menu
-      ? [
-          {
-            key: 'center',
-            icon: <UserOutlined />,
-            label: '个人中心',
-          },
-          {
-            key: 'settings',
-            icon: <SettingOutlined />,
-            label: '个人设置',
-          },
-          {
-            type: 'divider' as const,
-          },
-        ]
-      : []),
+    ...[
+      {
+        key: 'center',
+        icon: <UserOutlined />,
+        label: '个人中心',
+      },
+      {
+        key: 'settings',
+        icon: <SettingOutlined />,
+        label: '个人设置',
+      },
+      {
+        type: 'divider' as const,
+      },
+    ],
     {
       key: 'logout',
       icon: <LogoutOutlined />,
