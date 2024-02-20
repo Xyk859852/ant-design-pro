@@ -17,6 +17,7 @@ declare namespace UserPage {
   };
 
   type IdName = {
+    forEach(arg0: (element: any) => void): unknown;
     id?: string;
     name?: string;
   };

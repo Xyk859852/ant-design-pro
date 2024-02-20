@@ -81,7 +81,7 @@ const handleDelete = async (ids: (number | string)[]) => {
 
 const deptSelect = async () => {
   const deptList = await getDeptSelect();
-  const arr = [];
+  const arr: { key: any; label: any; value: any; }[] = [];
   deptList.forEach((element) => {
     arr.push({ key: element.id, label: element.name, value: element.id });
   });
@@ -90,7 +90,7 @@ const deptSelect = async () => {
 
 const roleSelect = async () => {
   const deptList = await getRoleSelect();
-  const arr = [];
+  const arr: { key: any; label: any; value: any; }[] = [];
   deptList.forEach((element) => {
     arr.push({ key: element.id, label: element.name, value: element.id });
   });
